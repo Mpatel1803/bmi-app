@@ -41,6 +41,25 @@ app.post('/process-contacts', urlEncodedParser, (request, response) => {
     response.end('Thank you ' + request.body.first_name + ' ' + request.body.last_name);
 });
 
+function calcBMI(weight,height){
+    var bmi = weight / (height*height); 
+    
+    return bmi;
+}
+function getStatus(bmi){
+    var status = '';
+    if(bmi < 18.5){
+        status = 'underweight';
+    }else if(bmi >= 18.5 && bmi < 25){
+        status = 'normal'
+    }else if(bmi >= 25  && bmi < 30){
+        status = 'overweight'
+    }else{
+        status = 'obese'
+    }
+    return status;
+}
+
 app.post('/calculate-bmi', urlEncodedParser, jsonParser, (request, response) => {
     var bmi = request.body.weight / (request.body.height * request.body.height);
     var status = '';
@@ -68,3 +87,5 @@ app.post('/calculate-bmi', urlEncodedParser, jsonParser, (request, response) => 
 
 app.listen(port);
 console.log(`Server listening on port ${port}`);
+
+module.exports = {calcBMI, getStatus};
