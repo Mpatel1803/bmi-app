@@ -4,17 +4,19 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node":"14.x"
+    "node": "14.x"
   },
   "scripts": {
-    "start":"node index.js",
+    "start": "node index.js",
     "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "hbs": "^4.2.0"
+    "hbs": "^4.2.0",
+    "puppeteer": "^19.8.3",
+    "webdriverio": "^8.7.0"
   },
   "devDependencies": {
     "jest": "^29.5.0"

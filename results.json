@@ -34,5 +34,11 @@
     "weight": "100",
     "bmi": 69.44444444444444,
     "status": "obese"
+  },
+  {
+    "height": "1.8",
+    "weight": "75",
+    "bmi": 23.148148148148145,
+    "status": "normal"
   }
 ]

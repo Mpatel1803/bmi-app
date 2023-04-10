@@ -62,8 +62,8 @@ function getStatus(bmi){
 
 app.post('/calculate-bmi', urlEncodedParser, jsonParser, (request, response) => {
     var bmi = request.body.weight / (request.body.height * request.body.height);
-    var status = '';
-    if(bmi < 18.5){
+    var status = getStatus(bmi);
+   /* if(bmi < 18.5){
         status = 'underweight';
     }else if(bmi >= 18.5 && bmi < 25){
         status = 'normal'
@@ -71,7 +71,7 @@ app.post('/calculate-bmi', urlEncodedParser, jsonParser, (request, response) => 
         status = 'overweight'
     }else{
         status = 'obese'
-    }
+    }*/
     const info = {
         height: request.body.height,
         weight: request.body.weight,
